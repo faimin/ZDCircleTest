@@ -15,6 +15,7 @@
 		BC474FA31CC1039200B2B0A9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC474FA11CC1039200B2B0A9 /* LaunchScreen.storyboard */; };
 		BC474FAE1CC1039200B2B0A9 /* ZDTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BC474FAD1CC1039200B2B0A9 /* ZDTestTests.m */; };
 		BC474FB91CC1039200B2B0A9 /* ZDTestUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = BC474FB81CC1039200B2B0A9 /* ZDTestUITests.m */; };
+		BC474FC81CC1041900B2B0A9 /* ZDCircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC474FC71CC1041900B2B0A9 /* ZDCircleView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,7 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		BC474F901CC1039200B2B0A9 /* ZDTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZDTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BC474F901CC1039200B2B0A9 /* ZDCircleTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZDCircleTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC474F941CC1039200B2B0A9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		BC474F961CC1039200B2B0A9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		BC474F971CC1039200B2B0A9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -45,12 +46,14 @@
 		BC474F9F1CC1039200B2B0A9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BC474FA21CC1039200B2B0A9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BC474FA41CC1039200B2B0A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BC474FA91CC1039200B2B0A9 /* ZDTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZDTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BC474FA91CC1039200B2B0A9 /* ZDCircleTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZDCircleTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC474FAD1CC1039200B2B0A9 /* ZDTestTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZDTestTests.m; sourceTree = "<group>"; };
 		BC474FAF1CC1039200B2B0A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BC474FB41CC1039200B2B0A9 /* ZDTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZDTestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BC474FB41CC1039200B2B0A9 /* ZDCircleTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZDCircleTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC474FB81CC1039200B2B0A9 /* ZDTestUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZDTestUITests.m; sourceTree = "<group>"; };
 		BC474FBA1CC1039200B2B0A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BC474FC61CC1041900B2B0A9 /* ZDCircleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDCircleView.h; sourceTree = "<group>"; };
+		BC474FC71CC1041900B2B0A9 /* ZDCircleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDCircleView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,9 +94,9 @@
 		BC474F911CC1039200B2B0A9 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				BC474F901CC1039200B2B0A9 /* ZDTest.app */,
-				BC474FA91CC1039200B2B0A9 /* ZDTestTests.xctest */,
-				BC474FB41CC1039200B2B0A9 /* ZDTestUITests.xctest */,
+				BC474F901CC1039200B2B0A9 /* ZDCircleTest.app */,
+				BC474FA91CC1039200B2B0A9 /* ZDCircleTest.xctest */,
+				BC474FB41CC1039200B2B0A9 /* ZDCircleTest.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -105,6 +108,8 @@
 				BC474F971CC1039200B2B0A9 /* AppDelegate.m */,
 				BC474F991CC1039200B2B0A9 /* ViewController.h */,
 				BC474F9A1CC1039200B2B0A9 /* ViewController.m */,
+				BC474FC61CC1041900B2B0A9 /* ZDCircleView.h */,
+				BC474FC71CC1041900B2B0A9 /* ZDCircleView.m */,
 				BC474F9C1CC1039200B2B0A9 /* Main.storyboard */,
 				BC474F9F1CC1039200B2B0A9 /* Assets.xcassets */,
 				BC474FA11CC1039200B2B0A9 /* LaunchScreen.storyboard */,
@@ -143,9 +148,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		BC474F8F1CC1039200B2B0A9 /* ZDTest */ = {
+		BC474F8F1CC1039200B2B0A9 /* ZDCircleTest */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BC474FBD1CC1039200B2B0A9 /* Build configuration list for PBXNativeTarget "ZDTest" */;
+			buildConfigurationList = BC474FBD1CC1039200B2B0A9 /* Build configuration list for PBXNativeTarget "ZDCircleTest" */;
 			buildPhases = (
 				BC474F8C1CC1039200B2B0A9 /* Sources */,
 				BC474F8D1CC1039200B2B0A9 /* Frameworks */,
@@ -155,14 +160,14 @@
 			);
 			dependencies = (
 			);
-			name = ZDTest;
+			name = ZDCircleTest;
 			productName = ZDTest;
-			productReference = BC474F901CC1039200B2B0A9 /* ZDTest.app */;
+			productReference = BC474F901CC1039200B2B0A9 /* ZDCircleTest.app */;
 			productType = "com.apple.product-type.application";
 		};
-		BC474FA81CC1039200B2B0A9 /* ZDTestTests */ = {
+		BC474FA81CC1039200B2B0A9 /* ZDCircleTestTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BC474FC01CC1039200B2B0A9 /* Build configuration list for PBXNativeTarget "ZDTestTests" */;
+			buildConfigurationList = BC474FC01CC1039200B2B0A9 /* Build configuration list for PBXNativeTarget "ZDCircleTestTests" */;
 			buildPhases = (
 				BC474FA51CC1039200B2B0A9 /* Sources */,
 				BC474FA61CC1039200B2B0A9 /* Frameworks */,
@@ -173,14 +178,14 @@
 			dependencies = (
 				BC474FAB1CC1039200B2B0A9 /* PBXTargetDependency */,
 			);
-			name = ZDTestTests;
+			name = ZDCircleTestTests;
 			productName = ZDTestTests;
-			productReference = BC474FA91CC1039200B2B0A9 /* ZDTestTests.xctest */;
+			productReference = BC474FA91CC1039200B2B0A9 /* ZDCircleTest.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		BC474FB31CC1039200B2B0A9 /* ZDTestUITests */ = {
+		BC474FB31CC1039200B2B0A9 /* ZDCircleTestUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BC474FC31CC1039200B2B0A9 /* Build configuration list for PBXNativeTarget "ZDTestUITests" */;
+			buildConfigurationList = BC474FC31CC1039200B2B0A9 /* Build configuration list for PBXNativeTarget "ZDCircleTestUITests" */;
 			buildPhases = (
 				BC474FB01CC1039200B2B0A9 /* Sources */,
 				BC474FB11CC1039200B2B0A9 /* Frameworks */,
@@ -191,9 +196,9 @@
 			dependencies = (
 				BC474FB61CC1039200B2B0A9 /* PBXTargetDependency */,
 			);
-			name = ZDTestUITests;
+			name = ZDCircleTestUITests;
 			productName = ZDTestUITests;
-			productReference = BC474FB41CC1039200B2B0A9 /* ZDTestUITests.xctest */;
+			productReference = BC474FB41CC1039200B2B0A9 /* ZDCircleTest.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -218,7 +223,7 @@
 					};
 				};
 			};
-			buildConfigurationList = BC474F8B1CC1039200B2B0A9 /* Build configuration list for PBXProject "ZDTest" */;
+			buildConfigurationList = BC474F8B1CC1039200B2B0A9 /* Build configuration list for PBXProject "ZDCircleTest" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -231,9 +236,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				BC474F8F1CC1039200B2B0A9 /* ZDTest */,
-				BC474FA81CC1039200B2B0A9 /* ZDTestTests */,
-				BC474FB31CC1039200B2B0A9 /* ZDTestUITests */,
+				BC474F8F1CC1039200B2B0A9 /* ZDCircleTest */,
+				BC474FA81CC1039200B2B0A9 /* ZDCircleTestTests */,
+				BC474FB31CC1039200B2B0A9 /* ZDCircleTestUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -270,6 +275,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC474FC81CC1041900B2B0A9 /* ZDCircleView.m in Sources */,
 				BC474F9B1CC1039200B2B0A9 /* ViewController.m in Sources */,
 				BC474F981CC1039200B2B0A9 /* AppDelegate.m in Sources */,
 				BC474F951CC1039200B2B0A9 /* main.m in Sources */,
@@ -297,12 +303,12 @@
 /* Begin PBXTargetDependency section */
 		BC474FAB1CC1039200B2B0A9 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = BC474F8F1CC1039200B2B0A9 /* ZDTest */;
+			target = BC474F8F1CC1039200B2B0A9 /* ZDCircleTest */;
 			targetProxy = BC474FAA1CC1039200B2B0A9 /* PBXContainerItemProxy */;
 		};
 		BC474FB61CC1039200B2B0A9 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = BC474F8F1CC1039200B2B0A9 /* ZDTest */;
+			target = BC474F8F1CC1039200B2B0A9 /* ZDCircleTest */;
 			targetProxy = BC474FB51CC1039200B2B0A9 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -417,8 +423,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = ZDTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = Saber.ZDTest;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = Saber.ZDCircleTest;
+				PRODUCT_NAME = ZDCircleTest;
 			};
 			name = Debug;
 		};
@@ -428,8 +434,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = ZDTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = Saber.ZDTest;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = Saber.ZDCircleTest;
+				PRODUCT_NAME = ZDCircleTest;
 			};
 			name = Release;
 		};
@@ -440,8 +446,8 @@
 				INFOPLIST_FILE = ZDTestTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Saber.ZDTestTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ZDTest.app/ZDTest";
+				PRODUCT_NAME = ZDCircleTest;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ZDCircleTest.app/ZDCircleTest";
 			};
 			name = Debug;
 		};
@@ -452,8 +458,8 @@
 				INFOPLIST_FILE = ZDTestTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Saber.ZDTestTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ZDTest.app/ZDTest";
+				PRODUCT_NAME = ZDCircleTest;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ZDCircleTest.app/ZDCircleTest";
 			};
 			name = Release;
 		};
@@ -463,7 +469,7 @@
 				INFOPLIST_FILE = ZDTestUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Saber.ZDTestUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = ZDCircleTest;
 				TEST_TARGET_NAME = ZDTest;
 			};
 			name = Debug;
@@ -474,7 +480,7 @@
 				INFOPLIST_FILE = ZDTestUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Saber.ZDTestUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = ZDCircleTest;
 				TEST_TARGET_NAME = ZDTest;
 			};
 			name = Release;
@@ -482,7 +488,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		BC474F8B1CC1039200B2B0A9 /* Build configuration list for PBXProject "ZDTest" */ = {
+		BC474F8B1CC1039200B2B0A9 /* Build configuration list for PBXProject "ZDCircleTest" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BC474FBB1CC1039200B2B0A9 /* Debug */,
@@ -491,7 +497,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		BC474FBD1CC1039200B2B0A9 /* Build configuration list for PBXNativeTarget "ZDTest" */ = {
+		BC474FBD1CC1039200B2B0A9 /* Build configuration list for PBXNativeTarget "ZDCircleTest" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BC474FBE1CC1039200B2B0A9 /* Debug */,
@@ -499,7 +505,7 @@
 			);
 			defaultConfigurationIsVisible = 0;
 		};
-		BC474FC01CC1039200B2B0A9 /* Build configuration list for PBXNativeTarget "ZDTestTests" */ = {
+		BC474FC01CC1039200B2B0A9 /* Build configuration list for PBXNativeTarget "ZDCircleTestTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BC474FC11CC1039200B2B0A9 /* Debug */,
@@ -507,7 +513,7 @@
 			);
 			defaultConfigurationIsVisible = 0;
 		};
-		BC474FC31CC1039200B2B0A9 /* Build configuration list for PBXNativeTarget "ZDTestUITests" */ = {
+		BC474FC31CC1039200B2B0A9 /* Build configuration list for PBXNativeTarget "ZDCircleTestUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BC474FC41CC1039200B2B0A9 /* Debug */,

@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "BC474F8F1CC1039200B2B0A9"
-               BuildableName = "ZDTest.app"
-               BlueprintName = "ZDTest"
-               ReferencedContainer = "container:ZDTest.xcodeproj">
+               BuildableName = "ZDCircleTest.app"
+               BlueprintName = "ZDCircleTest"
+               ReferencedContainer = "container:ZDCircleTest.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "BC474FA81CC1039200B2B0A9"
-               BuildableName = "ZDTestTests.xctest"
-               BlueprintName = "ZDTestTests"
-               ReferencedContainer = "container:ZDTest.xcodeproj">
+               BuildableName = "ZDCircleTest.xctest"
+               BlueprintName = "ZDCircleTestTests"
+               ReferencedContainer = "container:ZDCircleTest.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -43,9 +43,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "BC474FB31CC1039200B2B0A9"
-               BuildableName = "ZDTestUITests.xctest"
-               BlueprintName = "ZDTestUITests"
-               ReferencedContainer = "container:ZDTest.xcodeproj">
+               BuildableName = "ZDCircleTest.xctest"
+               BlueprintName = "ZDCircleTestUITests"
+               ReferencedContainer = "container:ZDCircleTest.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -53,9 +53,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "BC474F8F1CC1039200B2B0A9"
-            BuildableName = "ZDTest.app"
-            BlueprintName = "ZDTest"
-            ReferencedContainer = "container:ZDTest.xcodeproj">
+            BuildableName = "ZDCircleTest.app"
+            BlueprintName = "ZDCircleTest"
+            ReferencedContainer = "container:ZDCircleTest.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -76,9 +76,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "BC474F8F1CC1039200B2B0A9"
-            BuildableName = "ZDTest.app"
-            BlueprintName = "ZDTest"
-            ReferencedContainer = "container:ZDTest.xcodeproj">
+            BuildableName = "ZDCircleTest.app"
+            BlueprintName = "ZDCircleTest"
+            ReferencedContainer = "container:ZDCircleTest.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -95,9 +95,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "BC474F8F1CC1039200B2B0A9"
-            BuildableName = "ZDTest.app"
-            BlueprintName = "ZDTest"
-            ReferencedContainer = "container:ZDTest.xcodeproj">
+            BuildableName = "ZDCircleTest.app"
+            BlueprintName = "ZDCircleTest"
+            ReferencedContainer = "container:ZDCircleTest.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

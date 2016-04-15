@@ -7,8 +7,10 @@
 //
 
 #import "ViewController.h"
+#import "ZDCircleView.h"
 
 @interface ViewController ()
+@property (weak, nonatomic) IBOutlet ZDCircleView *circleView;
 
 @end
 
