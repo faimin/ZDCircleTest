@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "7B25A2AB38EE7DDCBF6BEE29A734481E78596E2A",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "7B25A2AB38EE7DDCBF6BEE29A734481E78596E2A" : 0,
+    "E329E12008D67B0E310038A11A5272110E31A97F" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "F5CD6918-CA42-4C43-AD1A-E539D2B71724",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "7B25A2AB38EE7DDCBF6BEE29A734481E78596E2A" : "ZDCircleTest\/",
+    "E329E12008D67B0E310038A11A5272110E31A97F" : ".."
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "ZDCircleTest",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "ZDCircleTest.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/faimin\/ZDCircleTest.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "7B25A2AB38EE7DDCBF6BEE29A734481E78596E2A"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/faimin\/LibClass.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "E329E12008D67B0E310038A11A5272110E31A97F"
+    }
+  ]
+}

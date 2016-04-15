@@ -27,13 +27,29 @@
 
 @implementation ZDCircleView
 
+- (instancetype)initWithCoder:(NSCoder *)coder
+{
+    self = [super initWithCoder:coder];
+    if (self) {
+        //[self setupLayer];
+    }
+    return self;
+}
+
+- (void)awakeFromNib
+{
+    [self setupLayer];
+}
 
 /*
  http://blog.csdn.net/rhljiayou/article/details/9919713
  
  http://www.cnblogs.com/xingchen/p/3615346.html
+ 
+ http://blog.csdn.net/zhoutao198712/article/details/20864143
  */
 
+/*
 - (void)drawRect:(CGRect)rect
 {
     UIColor *color = UIColorFromHEX(0xb5b5b5);
@@ -45,29 +61,64 @@
     
     
     UIColor *newColor = UIColorFromHEX(0xff6060);
-    //CGContextRef contextRef = UIGraphicsGetCurrentContext();
     CGContextSetRGBStrokeColor(contextRef, newColor.R, newColor.G, newColor.B, 1);
     CGContextSetLineWidth(contextRef, 5.0f);
     CGContextAddArc(contextRef, 150, 150, 150, 0, M_PI, 1);
     CGContextDrawPath(contextRef, kCGPathStroke);
     
-//    CGColorSpaceRef rgb = CGColorSpaceCreateDeviceRGB();
-//    CGFloat colors[] =
-//    {
-//        1,1,1, 1.00,
-//        1,1,0, 1.00,
-//        1,0,0, 1.00,
-//        1,0,1, 1.00,
-//        0,1,1, 1.00,
-//        0,1,0, 1.00,
-//        0,0,1, 1.00,
-//        0,0,0, 1.00,
-//    };
-//    CGGradientRef gradient = CGGradientCreateWithColorComponents
-//    (rgb, colors, NULL, sizeof(colors)/(sizeof(colors[0])*4));//形成梯形，渐变的效果
-//    CGColorSpaceRelease(rgb);
+    CGColorSpaceRef rgb = CGColorSpaceCreateDeviceRGB();
+    CGFloat colors[] =
+    {
+        1,1,1, 1.00,
+        1,1,0, 1.00,
+        1,0,0, 1.00,
+        1,0,1, 1.00,
+        0,1,1, 1.00,
+        0,1,0, 1.00,
+        0,0,1, 1.00,
+        0,0,0, 1.00,
+    };
+    CGGradientRef gradient = CGGradientCreateWithColorComponents
+    (rgb, colors, NULL, sizeof(colors)/(sizeof(colors[0])*4));//形成梯形，渐变的效果
+    CGColorSpaceRelease(rgb);
+}*/
     
+
+- (void)setupLayer
+{
+    CGFloat lineWidth = 50.0f;
+    CGPoint center = {150, 150};
+    
+    CAShapeLayer *circleLayer = [CAShapeLayer layer];
+    circleLayer.frame = self.bounds;
+    circleLayer.fillColor = nil;
+    circleLayer.strokeColor = UIColorFromHEX(0xb5b5b5).CGColor;
+    circleLayer.lineWidth = lineWidth;
+    circleLayer.path = [UIBezierPath bezierPathWithArcCenter:center radius:(CGRectGetWidth(self.bounds) - lineWidth)/2.0f startAngle:0 endAngle:M_PI*2 clockwise:YES].CGPath;
+    [self.layer addSublayer:circleLayer];
+    
+    CAShapeLayer *progressLayer = [CAShapeLayer layer];
+    progressLayer.frame = self.bounds;
+    progressLayer.fillColor = nil;
+    progressLayer.strokeColor = UIColorFromHEX(0xff6060).CGColor;
+    progressLayer.lineWidth = lineWidth;
+    progressLayer.lineCap = kCALineCapRound;
+    progressLayer.fillColor = nil;
+    progressLayer.path = [UIBezierPath bezierPathWithArcCenter:center radius:(CGRectGetWidth(self.bounds) - lineWidth)/2.0f startAngle:-M_PI_2 endAngle:M_PI*2 * 0.7 - M_PI_2 clockwise:YES].CGPath;
+    [self.layer addSublayer:progressLayer];
+    
+    CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"strokeEnd"];
+    animation.duration = 2.0f;
+    animation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseOut];
+    animation.fromValue = @(0.0f);
+    animation.toValue = @(1.0f);
+    animation.fillMode = kCAFillModeForwards;
+    animation.repeatCount = 1;
+    [progressLayer addAnimation:animation forKey:@"strokerEndAnimation"];
+    //progressLayer.strokeEnd = 1.0f;
 }
+
+
 
 
 @end
