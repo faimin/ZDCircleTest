@@ -24,6 +24,9 @@
 
 @end
 
+@interface ZDCircleView ()
+
+@end
 
 @implementation ZDCircleView
 
@@ -82,11 +85,10 @@
     (rgb, colors, NULL, sizeof(colors)/(sizeof(colors[0])*4));//形成梯形，渐变的效果
     CGColorSpaceRelease(rgb);
 }*/
-    
 
 - (void)setupLayer
 {
-    CGFloat lineWidth = 50.0f;
+    CGFloat lineWidth = 5.0f;
     CGPoint center = {150, 150};
     
     CAShapeLayer *circleLayer = [CAShapeLayer layer];
@@ -107,15 +109,46 @@
     progressLayer.path = [UIBezierPath bezierPathWithArcCenter:center radius:(CGRectGetWidth(self.bounds) - lineWidth)/2.0f startAngle:-M_PI_2 endAngle:M_PI*2 * 0.7 - M_PI_2 clockwise:YES].CGPath;
     [self.layer addSublayer:progressLayer];
     
+    
+    CAGradientLayer *gradientLayer = [CAGradientLayer layer];
+    
+    CAGradientLayer *gradientLayer1 = ({
+        CAGradientLayer *gradientLayer = [CAGradientLayer layer];
+        gradientLayer.frame = CGRectMake(150, 0, 150, 300);
+        gradientLayer.colors = @[(id)[UIColor redColor].CGColor, (id)[UIColor yellowColor].CGColor];
+        //locations属性可以使用一个数组（元素取值范围0到1），指定渐变图层参照colors顺序取用下一个过渡点颜色的位置。
+        //未设定时默认会平均分配过渡点。一旦设定就必须与colors的数量保持一致，否则会出错。
+        //gradientLayer.locations = @[@0.5, @1];
+        gradientLayer.startPoint = CGPointMake(0.5, 1);
+        gradientLayer.endPoint = CGPointMake(0.5, 0);
+        gradientLayer;
+    });
+    
+    CAGradientLayer *gradientLayer2 = ({
+        CAGradientLayer *gradientLayer = [CAGradientLayer layer];
+        gradientLayer.frame = CGRectMake(0, 0, 150, 300);
+        gradientLayer.colors = @[(id)[UIColor yellowColor].CGColor, (id)[UIColor redColor].CGColor];
+        //gradientLayer.locations = @[@0.2, @0.4, @1];
+        gradientLayer.startPoint = CGPointMake(0.5, 0);
+        gradientLayer.endPoint = CGPointMake(0.5, 1);
+        gradientLayer;
+    });
+    
+    [gradientLayer addSublayer:gradientLayer1];
+    [gradientLayer addSublayer:gradientLayer2];
+    gradientLayer.mask = progressLayer;
+    [self.layer addSublayer:gradientLayer];
+    
+    
     CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"strokeEnd"];
     animation.duration = 2.0f;
     animation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseOut];
     animation.fromValue = @(0.0f);
     animation.toValue = @(1.0f);
     animation.fillMode = kCAFillModeForwards;
-    animation.repeatCount = 1;
+    //animation.repeatCount = 1;
     [progressLayer addAnimation:animation forKey:@"strokerEndAnimation"];
-    //progressLayer.strokeEnd = 1.0f;
+    progressLayer.strokeEnd = 1.0f;
 }
 
 

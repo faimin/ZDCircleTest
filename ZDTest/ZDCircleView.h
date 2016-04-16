@@ -10,4 +10,6 @@
 
 @interface ZDCircleView : UIView
 
+@property (nonatomic, assign) CGFloat progress;
+
 @end
