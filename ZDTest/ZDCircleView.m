@@ -86,17 +86,20 @@
     CGColorSpaceRelease(rgb);
 }*/
 
+/// http://www.cocoachina.com/ios/20150318/11350.html
 - (void)setupLayer
 {
-    CGFloat lineWidth = 5.0f;
     CGPoint center = {150, 150};
+    CGFloat width, height;
+    width = height = 150;
+    CGFloat lineWidth = 5.0f;
     
     CAShapeLayer *circleLayer = [CAShapeLayer layer];
     circleLayer.frame = self.bounds;
     circleLayer.fillColor = nil;
     circleLayer.strokeColor = UIColorFromHEX(0xb5b5b5).CGColor;
     circleLayer.lineWidth = lineWidth;
-    circleLayer.path = [UIBezierPath bezierPathWithArcCenter:center radius:(CGRectGetWidth(self.bounds) - lineWidth)/2.0f startAngle:0 endAngle:M_PI*2 clockwise:YES].CGPath;
+    circleLayer.path = [UIBezierPath bezierPathWithArcCenter:center radius:(CGRectGetWidth(self.bounds) - lineWidth)/2.0f startAngle:-M_PI_2 endAngle:M_PI_2*3 clockwise:YES].CGPath;
     [self.layer addSublayer:circleLayer];
     
     CAShapeLayer *progressLayer = [CAShapeLayer layer];
@@ -105,12 +108,12 @@
     progressLayer.strokeColor = UIColorFromHEX(0xff6060).CGColor;
     progressLayer.lineWidth = lineWidth;
     progressLayer.lineCap = kCALineCapRound;
-    progressLayer.fillColor = nil;
-    progressLayer.path = [UIBezierPath bezierPathWithArcCenter:center radius:(CGRectGetWidth(self.bounds) - lineWidth)/2.0f startAngle:-M_PI_2 endAngle:M_PI*2 * 0.7 - M_PI_2 clockwise:YES].CGPath;
+    progressLayer.path = [UIBezierPath bezierPathWithArcCenter:center radius:(CGRectGetWidth(self.bounds) - lineWidth)/2.0f startAngle:-M_PI_2 endAngle:M_PI_2*3 * 0.7 clockwise:YES].CGPath;
     [self.layer addSublayer:progressLayer];
     
     
     CAGradientLayer *gradientLayer = [CAGradientLayer layer];
+    gradientLayer.frame = self.layer.bounds;
     
     CAGradientLayer *gradientLayer1 = ({
         CAGradientLayer *gradientLayer = [CAGradientLayer layer];
@@ -118,7 +121,7 @@
         gradientLayer.colors = @[(id)[UIColor redColor].CGColor, (id)[UIColor yellowColor].CGColor];
         //locations属性可以使用一个数组（元素取值范围0到1），指定渐变图层参照colors顺序取用下一个过渡点颜色的位置。
         //未设定时默认会平均分配过渡点。一旦设定就必须与colors的数量保持一致，否则会出错。
-        //gradientLayer.locations = @[@0.5, @1];
+        gradientLayer.locations = @[@0.6];
         gradientLayer.startPoint = CGPointMake(0.5, 1);
         gradientLayer.endPoint = CGPointMake(0.5, 0);
         gradientLayer;
@@ -128,7 +131,7 @@
         CAGradientLayer *gradientLayer = [CAGradientLayer layer];
         gradientLayer.frame = CGRectMake(0, 0, 150, 300);
         gradientLayer.colors = @[(id)[UIColor yellowColor].CGColor, (id)[UIColor redColor].CGColor];
-        //gradientLayer.locations = @[@0.2, @0.4, @1];
+        gradientLayer.locations = @[@0.6];
         gradientLayer.startPoint = CGPointMake(0.5, 0);
         gradientLayer.endPoint = CGPointMake(0.5, 1);
         gradientLayer;
@@ -136,8 +139,8 @@
     
     [gradientLayer addSublayer:gradientLayer1];
     [gradientLayer addSublayer:gradientLayer2];
-    gradientLayer.mask = progressLayer;
     [self.layer addSublayer:gradientLayer];
+    gradientLayer.mask = progressLayer;
     
     
     CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"strokeEnd"];
