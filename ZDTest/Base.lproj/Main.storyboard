@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -25,10 +25,26 @@
                                     <constraint firstAttribute="height" constant="300" id="hQ8-Cg-RzB"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5vR-Fz-QXw">
+                                <rect key="frame" x="509" y="54" width="60" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.34901960780000002" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="4vv-22-KF1"/>
+                                    <constraint firstAttribute="width" constant="60" id="nSp-v9-tb0"/>
+                                </constraints>
+                                <state key="normal" title="改变锚点">
+                                    <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="changeAnchorPoint:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OmP-Gb-mm2"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="GeI-We-UR9" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="MIA-x1-YEt"/>
+                            <constraint firstAttribute="trailing" secondItem="5vR-Fz-QXw" secondAttribute="trailing" constant="31" id="aZZ-w6-PrH"/>
+                            <constraint firstItem="5vR-Fz-QXw" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="34" id="cfw-il-2ed"/>
                             <constraint firstItem="GeI-We-UR9" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="sd3-ap-Obb"/>
                         </constraints>
                     </view>

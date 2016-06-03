@@ -92,55 +92,65 @@
     CGPoint center = {150, 150};
     CGFloat width, height;
     width = height = 150;
-    CGFloat lineWidth = 5.0f;
+    CGFloat lineWidth = 50.0f;
     
-    CAShapeLayer *circleLayer = [CAShapeLayer layer];
-    circleLayer.frame = self.bounds;
-    circleLayer.fillColor = nil;
-    circleLayer.strokeColor = UIColorFromHEX(0xb5b5b5).CGColor;
-    circleLayer.lineWidth = lineWidth;
-    circleLayer.path = [UIBezierPath bezierPathWithArcCenter:center radius:(CGRectGetWidth(self.bounds) - lineWidth)/2.0f startAngle:-M_PI_2 endAngle:M_PI_2*3 clockwise:YES].CGPath;
+    CAShapeLayer *circleLayer = ({
+        CAShapeLayer *circleLayer =[CAShapeLayer layer];
+        circleLayer.frame = self.bounds;
+        circleLayer.fillColor = nil;
+        circleLayer.strokeColor = UIColorFromHEX(0xb5b5b5).CGColor;
+        circleLayer.lineWidth = lineWidth;
+        circleLayer.path = [UIBezierPath bezierPathWithArcCenter:center radius:(CGRectGetWidth(self.bounds) - lineWidth)/2.0f startAngle:-M_PI_2 endAngle:M_PI_2*3 clockwise:YES].CGPath;
+        circleLayer;
+    });
     [self.layer addSublayer:circleLayer];
     
-    CAShapeLayer *progressLayer = [CAShapeLayer layer];
-    progressLayer.frame = self.bounds;
-    progressLayer.fillColor = nil;
-    progressLayer.strokeColor = UIColorFromHEX(0xff6060).CGColor;
-    progressLayer.lineWidth = lineWidth;
-    progressLayer.lineCap = kCALineCapRound;
-    progressLayer.path = [UIBezierPath bezierPathWithArcCenter:center radius:(CGRectGetWidth(self.bounds) - lineWidth)/2.0f startAngle:-M_PI_2 endAngle:M_PI_2*3 * 0.7 clockwise:YES].CGPath;
+    CAShapeLayer *progressLayer = ({
+        CAShapeLayer *progressLayer = [CAShapeLayer layer];
+        progressLayer.frame = self.bounds;
+        progressLayer.path = [UIBezierPath bezierPathWithArcCenter:center radius:(CGRectGetWidth(self.bounds) - lineWidth)/2.0f startAngle:-M_PI_2 endAngle:M_PI_2*3 clockwise:YES].CGPath;
+        progressLayer.fillColor = nil;
+        progressLayer.strokeColor = UIColorFromHEX(0xff6060).CGColor;
+        progressLayer.lineWidth = lineWidth;
+        progressLayer.lineCap = kCALineCapRound;
+        progressLayer.lineJoin = kCALineJoinRound;
+        progressLayer;
+    });
     [self.layer addSublayer:progressLayer];
+    
     
     
     CAGradientLayer *gradientLayer = [CAGradientLayer layer];
     gradientLayer.frame = self.layer.bounds;
     
-    CAGradientLayer *gradientLayer1 = ({
+    CAGradientLayer *gradientLayerR = ({
         CAGradientLayer *gradientLayer = [CAGradientLayer layer];
         gradientLayer.frame = CGRectMake(150, 0, 150, 300);
-        gradientLayer.colors = @[(id)[UIColor redColor].CGColor, (id)[UIColor yellowColor].CGColor];
+        gradientLayer.colors = @[(__bridge id)UIColorFromHEX(0xff6060).CGColor,
+                                 (__bridge id)UIColorFromHEX(0xff5050).CGColor];
         //locations属性可以使用一个数组（元素取值范围0到1），指定渐变图层参照colors顺序取用下一个过渡点颜色的位置。
         //未设定时默认会平均分配过渡点。一旦设定就必须与colors的数量保持一致，否则会出错。
-        gradientLayer.locations = @[@0.6];
+        gradientLayer.locations = @[@0.1, @0.6];
         gradientLayer.startPoint = CGPointMake(0.5, 1);
         gradientLayer.endPoint = CGPointMake(0.5, 0);
         gradientLayer;
     });
     
-    CAGradientLayer *gradientLayer2 = ({
+    CAGradientLayer *gradientLayerL = ({
         CAGradientLayer *gradientLayer = [CAGradientLayer layer];
         gradientLayer.frame = CGRectMake(0, 0, 150, 300);
-        gradientLayer.colors = @[(id)[UIColor yellowColor].CGColor, (id)[UIColor redColor].CGColor];
-        gradientLayer.locations = @[@0.6];
+        gradientLayer.colors = @[(__bridge id)UIColorFromHEX(0xff5050).CGColor,
+                                 (__bridge id)UIColorFromHEX(0xff6060).CGColor];
+        gradientLayer.locations = @[@0.1, @0.6];
         gradientLayer.startPoint = CGPointMake(0.5, 0);
         gradientLayer.endPoint = CGPointMake(0.5, 1);
         gradientLayer;
     });
     
-    [gradientLayer addSublayer:gradientLayer1];
-    [gradientLayer addSublayer:gradientLayer2];
-    [self.layer addSublayer:gradientLayer];
+    [gradientLayer addSublayer:gradientLayerL];
+    [gradientLayer addSublayer:gradientLayerR];
     gradientLayer.mask = progressLayer;
+    [self.layer addSublayer:gradientLayer];
     
     
     CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"strokeEnd"];
@@ -149,9 +159,8 @@
     animation.fromValue = @(0.0f);
     animation.toValue = @(1.0f);
     animation.fillMode = kCAFillModeForwards;
-    //animation.repeatCount = 1;
     [progressLayer addAnimation:animation forKey:@"strokerEndAnimation"];
-    progressLayer.strokeEnd = 1.0f;
+    //progressLayer.strokeEnd = 1.0f;
 }
 
 

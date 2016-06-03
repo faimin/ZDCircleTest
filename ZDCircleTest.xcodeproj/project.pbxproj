@@ -504,6 +504,7 @@
 				BC474FBF1CC1039200B2B0A9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BC474FC01CC1039200B2B0A9 /* Build configuration list for PBXNativeTarget "ZDCircleTestTests" */ = {
 			isa = XCConfigurationList;
@@ -512,6 +513,7 @@
 				BC474FC21CC1039200B2B0A9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BC474FC31CC1039200B2B0A9 /* Build configuration list for PBXNativeTarget "ZDCircleTestUITests" */ = {
 			isa = XCConfigurationList;
@@ -520,6 +522,7 @@
 				BC474FC51CC1039200B2B0A9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
