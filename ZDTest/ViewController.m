@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "ZDCircleView.h"
+#import <IJKMediaFramework/IJKMediaFramework.h>
 
 @interface ViewController ()
 @property (weak, nonatomic) IBOutlet ZDCircleView *circleView;
@@ -20,7 +21,12 @@
 {
 	[super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-
+    
+    CGRect rect = CGRectMake(20, 50, 100, 80);
+    UIEdgeInsets ed = UIEdgeInsetsMake(-3, -4, -5, -6);
+    CGRect  r =  UIEdgeInsetsInsetRect(rect, ed);
+    NSLog(@"%@", [NSValue valueWithCGRect:r]);
+    
 	self.aView = ({
 		UIView *aView = [[UIView alloc] initWithFrame:CGRectMake(150, 150, 100, 100)];
 		aView.backgroundColor = [UIColor redColor];
@@ -28,6 +34,10 @@
 		aView;
 	});
 
+    NSArray *arrTemp = @[@"1", @"2", @"3", @"4", @"5", @"1", @"2"];
+    NSArray *newArr = [arrTemp sortedArrayUsingSelector:@selector(compare:)];
+    NSLog(@"\n---> %@", newArr);
+    
 	dispatch_group_t group = dispatch_group_create();
 	dispatch_semaphore_t semaphore = dispatch_semaphore_create(10);
 	dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
